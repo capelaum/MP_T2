@@ -3,6 +3,7 @@
 
 int Verifica_Velha(int Velha[][3], int linhas) {
     int i = 0, j = 0;
+
     // conta os valores 1 da matriz
     int conta_x = 0;
 
@@ -21,6 +22,24 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         }
 
         // apos verificar uma linha, zera contador
+        conta_x = 0;
+    }
+
+    // verifica colunas
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (Velha[j][i] == 1) {
+                conta_x++;
+            }
+        }
+
+        // se na coluna tiverem tres x
+        if (conta_x == 3) {
+            cout << "X venceu!" << endl;
+            return 1;
+        }
+
+        // apos verificar uma coluna, zera contador
         conta_x = 0;
     }
 
