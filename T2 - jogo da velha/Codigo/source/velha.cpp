@@ -24,5 +24,5 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         conta_x = 0;
     }
 
-    return 1;
+    return -1;
 }
