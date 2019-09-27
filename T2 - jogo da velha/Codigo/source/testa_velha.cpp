@@ -25,6 +25,7 @@ TEST(Jogo_da_Velha, Vencedor_X_linha_0) {
     // muda linha 0
     Velha[0][1] = 2;
 
+    cout << "TESTE SE X NAO VENCEU NA LINHA 0: " << endl;
     // caso em que X nao deve vencer
     ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
@@ -53,6 +54,7 @@ TEST(Jogo_da_Velha, Vencedor_X_linha_1) {
     // muda linha 1
     Velha[1][1] = 2;
 
+    cout << "TESTE SE X NAO VENCEU NA LINHA 1: " << endl;
     // caso em que X nao deve vencer
     ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
@@ -81,6 +83,7 @@ TEST(Jogo_da_Velha, Vencedor_X_linha_2) {
     // muda linha 2
     Velha[2][1] = 2;
 
+    cout << "TESTE SE X NAO VENCEU NA LINHA 2: " << endl;
     // caso em que X nao deve vencer
     ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
@@ -105,6 +108,13 @@ TEST(Jogo_da_Velha, Vencedor_X_coluna_0) {
 
     // testa função com coluna 0 preenchida com 1
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+
+    // muda coluna 0
+    Velha[2][0] = 2;
+
+    cout << "TESTE SE X NAO VENCEU NA COLUNA 0: " << endl;
+    // caso em que X nao deve vencer
+    ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
 
 // testa se vencedor foi X na coluna 1
@@ -127,6 +137,13 @@ TEST(Jogo_da_Velha, Vencedor_X_coluna_1) {
 
     // testa função com coluna 1 preenchida com 1
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+
+    // muda coluna 1
+    Velha[2][1] = 2;
+
+    cout << "TESTE SE X NAO VENCEU NA COLUNA 1: " << endl;
+    // caso em que X nao deve vencer
+    ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
 
 // testa se vencedor foi X na coluna 2
@@ -149,6 +166,13 @@ TEST(Jogo_da_Velha, Vencedor_X_coluna_2) {
 
     // testa função com coluna 2 preenchida com 1
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+
+    // muda coluna 2
+    Velha[2][2] = 2;
+
+    cout << "TESTE SE X NAO VENCEU NA COLUNA 2: " << endl;
+    // caso em que X nao deve vencer
+    ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
 
 int main(int argc, char** argv) {
