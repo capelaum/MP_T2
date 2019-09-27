@@ -188,7 +188,7 @@ TEST(Jogo_da_Velha, Vencedor_X_diagonal_1) {
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
 
     // muda diagonal 1
-    Velha[1][1] = 2;
+    Velha[0][0] = 2;
 
     // caso em que X nao deve vencer
     ASSERT_NE(1, Verifica_Velha(Velha, 3));
@@ -212,7 +212,10 @@ TEST(Jogo_da_Velha, Vencedor_X_diagonal_2) {
             if (i == 0 && j == 2) {
                 Velha[i][j] = 1;
             }
-            if (i == 2 && (j == 2 || j ==0)) {
+            if (i == 1 && j == 1) {
+                Velha[i][j] = 1;
+            }
+            if (i == 2 && j == 0) {
                 Velha[i][j] = 1;
             }
         }

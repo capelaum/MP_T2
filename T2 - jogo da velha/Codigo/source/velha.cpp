@@ -74,7 +74,12 @@ int Verifica_Velha(int Velha[][3], int linhas) {
                     conta_diagonal_x++;
                 }
             }
-            if (i == 2 && (j == 2 || j ==0)) {
+            if (i == 1 && j == 1) {
+                if (Velha[i][j] == 1) {
+                    conta_diagonal_x++;
+                }
+            }
+            if (i == 2 && j == 0) {
                 if (Velha[i][j] == 1) {
                     conta_diagonal_x++;
                 }
@@ -88,5 +93,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         return 1;
     }
 
+    // apos verificar diagonal 2, zera contador
+    conta_diagonal_x = 0;
     return -1;
 }
