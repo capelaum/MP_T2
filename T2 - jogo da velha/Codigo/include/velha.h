@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+int Verifica_Velha(int* Velha);
 
 
 #endif
