@@ -6,7 +6,6 @@
 
 using namespace std;
 
-int Verifica_Velha(int* Velha);
-
+int Verifica_Velha(int Velha[][3], int linhas);
 
 #endif
