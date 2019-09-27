@@ -186,6 +186,12 @@ TEST(Jogo_da_Velha, Vencedor_X_diagonal_1) {
 
     // testa função com diagonal 1 preenchida com 1
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+
+    // muda diagonal 1
+    Velha[2][2] = 2;
+
+    // caso em que X nao deve vencer
+    ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
 
 int main(int argc, char** argv) {
