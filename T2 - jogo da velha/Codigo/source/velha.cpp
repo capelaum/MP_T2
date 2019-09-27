@@ -17,7 +17,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
         // se na linha tiverem tres x
         if (conta_x == 3) {
-            cout << "X venceu!" << endl;
+            // cout << "X venceu!" << endl;
             return 1;
         }
 
@@ -35,7 +35,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
         // se na coluna tiverem tres x
         if (conta_x == 3) {
-            cout << "X venceu!" << endl;
+            // cout << "X venceu!" << endl;
             return 1;
         }
 
