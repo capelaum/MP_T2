@@ -1,6 +1,13 @@
 
 #include "velha.h"
 
+TEST(Jogo_da_Velha, Vencedor_X)
+{
+    int Velha [3][3];
+    EXPECT_EQ(1, Verifica_Velha((int*) Velha));
+
+}
+
 int main(int argc, char** argv)
 {
     // Inicializa os testes
