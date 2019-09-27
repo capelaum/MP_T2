@@ -1,7 +1,7 @@
 // Copyright 2019 Luis Vinicius Capelletto
 #include "../include/velha.h"
 
-TEST(Jogo_da_Velha, Vencedor_X) {
+TEST(Jogo_da_Velha, Vencedor_X_linhas) {
     int Velha[3][3];
     int i = 0;
     for (i = 0; i < 3; i++) {
