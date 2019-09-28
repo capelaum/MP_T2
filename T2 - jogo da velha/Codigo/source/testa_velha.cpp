@@ -561,13 +561,55 @@ TEST(Jogo_da_Velha, Indefinido) {
 
     ASSERT_EQ(-1, Verifica_Velha(Velha, 3));
 
+    // modifica alguns valores
+    Velha[0][0] = 1;
+    Velha[0][0] = 2;
+
+    // testa novamente se esta indefinido ainda
+    ASSERT_EQ(-1, Verifica_Velha(Velha, 3));
+
     // completa coluna 1 com 2
     for (j = 0; j < 3; j++) {
         Velha[j][1] = 2;
     }
 
+    // caso em que jogo nao esta indefinido
     ASSERT_NE(-1, Verifica_Velha(Velha, 3));
 }
+
+// testa se jogo eh impossivel segundo as regras
+TEST(Jogo_da_Velha, Impossivel) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa linha 0 com 1
+    for (j = 0; j < 3; j++) {
+        Velha[0][j] = 1;
+    }
+
+    // completa linha 1 e 2 com 2
+    for (j = 0; j < 3; j++) {
+        Velha[1][j] = 2;
+        Velha[2][j] = 2;
+    }
+
+    // caso do jogo ser com certeza impossivel
+    ASSERT_EQ(-2, Verifica_Velha(Velha, 3));
+
+    // modifica uma linha, agora jogo eh possivel
+    Velha[2][2] = 1;
+
+    // testa caso nao seja impossivel
+    ASSERT_NE(-2, Verifica_Velha(Velha, 3));
+}
+
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
