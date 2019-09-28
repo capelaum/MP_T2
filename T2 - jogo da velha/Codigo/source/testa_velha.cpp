@@ -312,6 +312,33 @@ TEST(Jogo_da_Velha, Vencedor_O_linha_2) {
     ASSERT_NE(2, Verifica_Velha(Velha, 3));
 }
 
+// testa se vencedor foi O na coluna 0
+TEST(Jogo_da_Velha, Vencedor_O_coluna_0) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa coluna 0 com 2
+    for (j = 0; j < 3; j++) {
+        Velha[j][0] = 2;
+    }
+
+    // testa função com coluna 0 preenchida com 1
+    ASSERT_EQ(2, Verifica_Velha(Velha, 3));
+
+    // muda coluna 0
+    Velha[2][0] = 1;
+
+    // caso em que X nao deve vencer
+    ASSERT_NE(2, Verifica_Velha(Velha, 3));
+}
+
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
