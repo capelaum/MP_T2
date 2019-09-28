@@ -504,6 +504,49 @@ TEST(Jogo_da_Velha, Empatado_linha) {
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
 }
 
+// testa se jogo terminou empatado com 2 colunas completas com X ou O
+TEST(Jogo_da_Velha, Empatado_coluna) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa coluna 0 com 1
+    for (j = 0; j < 3; j++) {
+        Velha[j][0] = 1;
+    }
+
+    // completa coluna 1 com 2
+    for (j = 0; j < 3; j++) {
+        Velha[j][1] = 2;
+    }
+
+    // testa função com 2 colunas preenchidas com X e O - possivel empate
+    ASSERT_EQ(0, Verifica_Velha(Velha, 3));
+
+    // muda coluna 0
+    Velha[0][0] = 0;
+
+    // caso em que nao deve empatar - O vence
+    ASSERT_NE(0, Verifica_Velha(Velha, 3));
+    ASSERT_EQ(2, Verifica_Velha(Velha, 3));
+
+    // muda coluna 0 para estado inicial
+    Velha[0][0] = 1;
+
+    // muda coluna 1
+    Velha[1][1] = 0;
+
+    // caso em que nao deve empatar - X vence
+    ASSERT_NE(0, Verifica_Velha(Velha, 3));
+    ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+}
+
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
