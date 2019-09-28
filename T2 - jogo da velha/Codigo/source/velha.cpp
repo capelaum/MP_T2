@@ -96,7 +96,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         return 1;
     }
 
-    // apos verificar diagonal 1, zera contador
+    // apos verificar diagonal 1, zera contador de X
     conta_diagonal_x = 0;
 
     // se diagonal 1 conter tres O
@@ -105,7 +105,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         return 2;
     }
 
-    // apos verificar diagonal 1, zera contador
+    // apos verificar diagonal 1, zera contador de O
     conta_diagonal_o = 0;
 
     // verifica diagonal 2
@@ -115,15 +115,24 @@ int Verifica_Velha(int Velha[][3], int linhas) {
                 if (Velha[i][j] == 1) {
                     conta_diagonal_x++;
                 }
+                if (Velha[i][j] == 2) {
+                    conta_diagonal_o++;
+                }
             }
             if (i == 1 && j == 1) {
                 if (Velha[i][j] == 1) {
                     conta_diagonal_x++;
                 }
+                if (Velha[i][j] == 2) {
+                    conta_diagonal_o++;
+                }
             }
             if (i == 2 && j == 0) {
                 if (Velha[i][j] == 1) {
                     conta_diagonal_x++;
+                }
+                if (Velha[i][j] == 2) {
+                    conta_diagonal_o++;
                 }
             }
         }
@@ -135,10 +144,17 @@ int Verifica_Velha(int Velha[][3], int linhas) {
         return 1;
     }
 
-    // apos verificar diagonal 2, zera contador
+    // apos verificar diagonal 2, zera contador de X
     conta_diagonal_x = 0;
 
+    // se diagonal 2 conter tres O
+    if (conta_diagonal_o == 3) {
+        // cout << "X venceu!" << endl;
+        return 2;
+    }
 
+    // apos verificar diagonal 2, zera contador de O
+    conta_diagonal_o = 0;
 
 
     return -1;
