@@ -1,6 +1,12 @@
 // Copyright 2019 Luis Vinicius Capelletto
 #include "../include/velha.h"
 
+// função que verifica resultado de um jogo da velha
+// Retorna 1 se X foi o vencedor
+// Retorna 2 se O foi o vencedor
+// Retorna 0 se esta empatado
+// Retorna -1 se o jogo esta indefinido
+// Retorna -2 se o jogo eh impossível segundo as regras
 int Verifica_Velha(int Velha[][3], int linhas) {
     int i = 0, j = 0;
 

@@ -461,6 +461,32 @@ TEST(Jogo_da_Velha, Vencedor_O_diagonal_2) {
     ASSERT_NE(1, Verifica_Velha(Velha, 3));
 }
 
+// testa se jogo terminou empatado com 2 linhas completas com X ou O
+TEST(Jogo_da_Velha, Empatado_linha) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa linha 0 com 1
+    for (j = 0; j < 3; j++) {
+        Velha[0][j] = 1;
+    }
+
+    // completa linha 1 com 2
+    for (j = 0; j < 3; j++) {
+        Velha[1][j] = 2;
+    }
+
+    // testa função com 2 linhas preenchidas com 1 e 2 - possivel empate
+    ASSERT_EQ(0, Verifica_Velha(Velha, 3));
+}
+
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
