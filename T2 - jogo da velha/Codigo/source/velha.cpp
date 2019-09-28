@@ -74,7 +74,7 @@ int Verifica_Velha(int Velha[][3], int linhas) {
     int conta_diagonal_x = 0;
 
     // conta os valores 2 das diagonais da matriz
-    // int conta_diagonal_o = 0;
+    int conta_diagonal_o = 0;
 
     // verifica diagonal 1
     for (i = 0; i < 3; i++) {
@@ -82,6 +82,9 @@ int Verifica_Velha(int Velha[][3], int linhas) {
             if (i == j) {
                 if (Velha[i][j] == 1) {
                     conta_diagonal_x++;
+                }
+                if (Velha[i][j] == 2) {
+                    conta_diagonal_o++;
                 }
             }
         }
@@ -95,6 +98,15 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
     // apos verificar diagonal 1, zera contador
     conta_diagonal_x = 0;
+
+    // se diagonal 1 conter tres O
+    if (conta_diagonal_o == 3) {
+        // cout << "X venceu!" << endl;
+        return 2;
+    }
+
+    // apos verificar diagonal 1, zera contador
+    conta_diagonal_o = 0;
 
     // verifica diagonal 2
     for (i = 0; i < 3; i++) {
