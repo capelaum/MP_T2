@@ -46,20 +46,35 @@ int Verifica_Velha(int Velha[][3], int linhas) {
             if (Velha[j][i] == 1) {
                 conta_x++;
             }
+            if (Velha[j][i] == 2) {
+                conta_o++;
+            }
         }
 
-        // se alguma coluna conter tres x
+        // se alguma coluna conter tres X
         if (conta_x == 3) {
             // cout << "X venceu!" << endl;
             return 1;
         }
 
-        // apos verificar uma coluna, zera contador
+        // se alguma coluna conter tres O
+        if (conta_o == 3) {
+            // cout << "X venceu!" << endl;
+            return 2;
+        }
+
+        // apos verificar uma coluna, zera contador de X
         conta_x = 0;
+
+        // apos verificar uma coluna, zera contador de O
+        conta_o = 0;
     }
 
     // conta os valores 1 das diagonais da matriz
     int conta_diagonal_x = 0;
+
+    // conta os valores 2 das diagonais da matriz
+    // int conta_diagonal_o = 0;
 
     // verifica diagonal 1
     for (i = 0; i < 3; i++) {
