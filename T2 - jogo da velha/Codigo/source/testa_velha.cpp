@@ -547,6 +547,20 @@ TEST(Jogo_da_Velha, Empatado_coluna) {
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
 }
 
+// testa se jogo terminou indefinido
+TEST(Jogo_da_Velha, Indefinido) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    ASSERT_EQ(-1, Verifica_Velha(Velha, 3));
+}
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
