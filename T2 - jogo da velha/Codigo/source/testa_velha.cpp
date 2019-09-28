@@ -221,7 +221,7 @@ TEST(Jogo_da_Velha, Vencedor_X_diagonal_2) {
         }
     }
 
-    // testa função com diagonal 1 preenchida com 1
+    // testa função com diagonal 2 preenchida com 1
     ASSERT_EQ(1, Verifica_Velha(Velha, 3));
 
     // muda diagonal 2
@@ -388,6 +388,37 @@ TEST(Jogo_da_Velha, Vencedor_O_coluna_2) {
 
     // muda coluna 2
     Velha[2][2] = 1;
+
+    // caso em que O nao deve vencer
+    ASSERT_NE(2, Verifica_Velha(Velha, 3));
+}
+
+// testa se vencedor foi O na diagonal 1
+TEST(Jogo_da_Velha, Vencedor_O_diagonal_1) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa diagonal com valor 2
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (i == j) {
+                Velha[i][j] = 2;
+            }
+        }
+    }
+
+    // testa função com diagonal 1 preenchida com 2
+    ASSERT_EQ(2, Verifica_Velha(Velha, 3));
+
+    // muda diagonal 1
+    Velha[0][0] = 1;
 
     // caso em que O nao deve vencer
     ASSERT_NE(2, Verifica_Velha(Velha, 3));
