@@ -424,6 +424,43 @@ TEST(Jogo_da_Velha, Vencedor_O_diagonal_1) {
     ASSERT_NE(2, Verifica_Velha(Velha, 3));
 }
 
+// testa se vencedor foi O na diagonal 2
+TEST(Jogo_da_Velha, Vencedor_O_diagonal_2) {
+    int Velha[3][3];
+    int i = 0, j = 0;
+
+    // zera matriz
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            Velha[i][j] = 0;
+        }
+    }
+
+    // completa diagonal 2 com valor 2
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (i == 0 && j == 2) {
+                Velha[i][j] = 2;
+            }
+            if (i == 1 && j == 1) {
+                Velha[i][j] = 2;
+            }
+            if (i == 2 && j == 0) {
+                Velha[i][j] = 2;
+            }
+        }
+    }
+
+    // testa função com diagonal 2 preenchida com 2
+    ASSERT_EQ(2, Verifica_Velha(Velha, 3));
+
+    // muda diagonal 2
+    Velha[0][2] = 1;
+
+    // caso em que O nao deve vencer
+    ASSERT_NE(1, Verifica_Velha(Velha, 3));
+}
+
 int main(int argc, char** argv) {
     // Inicializa os testes
     ::testing::InitGoogleTest(&argc, argv);
