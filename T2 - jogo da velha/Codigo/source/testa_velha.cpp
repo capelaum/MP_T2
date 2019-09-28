@@ -608,6 +608,21 @@ TEST(Jogo_da_Velha, Impossivel) {
 
     // testa caso nao seja impossivel
     ASSERT_NE(-2, Verifica_Velha(Velha, 3));
+
+    // jogo entao esta empatado
+    ASSERT_EQ(0, Verifica_Velha(Velha, 3));
+
+    // modifica linha 1
+    Velha[1][0] = 1;
+
+    // entao X venceu
+    ASSERT_EQ(1, Verifica_Velha(Velha, 3));
+
+    // modifica linha 0
+    Velha[0][0] = 2;
+
+    // jogo entao esta indefinido
+    ASSERT_EQ(-1, Verifica_Velha(Velha, 3));
 }
 
 int main(int argc, char** argv) {

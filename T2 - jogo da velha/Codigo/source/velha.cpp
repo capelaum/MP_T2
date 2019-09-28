@@ -16,6 +16,34 @@ int Verifica_Velha(int Velha[][3], int linhas) {
     // conta os valores 2 das linhas e colunas da matriz
     int conta_o = 0;
 
+    // verifica se jogo eh impossivel
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (Velha[i][j] == 1) {
+                conta_x++;
+            }
+            if (Velha[i][j] == 2) {
+                conta_o++;
+            }
+        }
+    }
+
+    // impossivel ter mais de 5 X
+    if (conta_x > 5) {
+        return -2;
+    }
+
+    // impossivel ter mais de 5 X
+    if (conta_o > 5) {
+        return -2;
+    }
+
+    // apos verificar se jogo eh impossivel, zera contador de X
+    conta_x = 0;
+
+    // apos verificar se jogo eh impossivel, zera contador de O
+    conta_o = 0;
+
     // indica se X ou O possivelmente ganharam
     bool x_venceu = false, o_venceu = false;
 
