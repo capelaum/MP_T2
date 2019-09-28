@@ -560,6 +560,13 @@ TEST(Jogo_da_Velha, Indefinido) {
     }
 
     ASSERT_EQ(-1, Verifica_Velha(Velha, 3));
+
+    // completa coluna 1 com 2
+    for (j = 0; j < 3; j++) {
+        Velha[j][1] = 2;
+    }
+
+    ASSERT_NE(-1, Verifica_Velha(Velha, 3));
 }
 int main(int argc, char** argv) {
     // Inicializa os testes
