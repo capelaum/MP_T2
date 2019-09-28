@@ -60,14 +60,12 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
         // se alguma coluna conter tres X
         if (conta_x == 3) {
-            // cout << "X venceu!" << endl;
-            return 1;
+            x_venceu = true;
         }
 
         // se alguma coluna conter tres O
         if (conta_o == 3) {
-            // cout << "X venceu!" << endl;
-            return 2;
+            o_venceu = true;
         }
 
         // apos verificar uma coluna, zera contador de X
