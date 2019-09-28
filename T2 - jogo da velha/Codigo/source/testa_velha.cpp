@@ -483,7 +483,7 @@ TEST(Jogo_da_Velha, Empatado_linha) {
         Velha[1][j] = 2;
     }
 
-    // testa função com 2 linhas preenchidas com 1 e 2 - possivel empate
+    // testa função com 2 linhas preenchidas com X e O - possivel empate
     ASSERT_EQ(0, Verifica_Velha(Velha, 3));
 }
 
