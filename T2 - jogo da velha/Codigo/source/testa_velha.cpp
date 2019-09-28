@@ -40,7 +40,7 @@ TEST(Jogo_da_Velha, Vencedor_X_linha_1) {
         }
     }
 
-    // completa linha 0 com 1
+    // completa linha 1 com 1
     for (j = 0; j < 3; j++) {
         Velha[1][j] = 1;
     }
@@ -67,7 +67,7 @@ TEST(Jogo_da_Velha, Vencedor_X_linha_2) {
         }
     }
 
-    // completa linha 0 com 1
+    // completa linha 2 com 1
     for (j = 0; j < 3; j++) {
         Velha[2][j] = 1;
     }
