@@ -485,6 +485,23 @@ TEST(Jogo_da_Velha, Empatado_linha) {
 
     // testa função com 2 linhas preenchidas com X e O - possivel empate
     ASSERT_EQ(0, Verifica_Velha(Velha, 3));
+
+    // muda linha 0
+    Velha[0][2] = 0;
+
+    // caso em que nao deve empatar - O vence
+    ASSERT_NE(0, Verifica_Velha(Velha, 3));
+    ASSERT_EQ(2, Verifica_Velha(Velha, 3));
+
+    // muda linha 0 para estado inicial
+    Velha[0][2] = 1;
+
+    // muda linha 1
+    Velha[1][2] = 0;
+
+    // caso em que nao deve empatar - X vence
+    ASSERT_NE(0, Verifica_Velha(Velha, 3));
+    ASSERT_EQ(1, Verifica_Velha(Velha, 3));
 }
 
 int main(int argc, char** argv) {

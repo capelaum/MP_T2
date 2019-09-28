@@ -16,6 +16,9 @@ int Verifica_Velha(int Velha[][3], int linhas) {
     // conta os valores 2 das linhas e colunas da matriz
     int conta_o = 0;
 
+    // indica se X ou O possivelmente ganharam
+    bool x_venceu = false, o_venceu = false;
+
     // verifica linhas
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
@@ -29,14 +32,12 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
         // se alguma linha conter tres X
         if (conta_x == 3) {
-            // cout << "X venceu!" << endl;
-            return 1;
+            x_venceu = true;
         }
 
         // se alguma linha conter tres O
         if (conta_o == 3) {
-            // cout << "X venceu!" << endl;
-            return 2;
+            o_venceu = true;
         }
 
         // apos verificar uma linha, zera contador de X
@@ -98,7 +99,6 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
     // se diagonal 1 conter tres x
     if (conta_diagonal_x == 3) {
-        // cout << "X venceu!" << endl;
         return 1;
     }
 
@@ -107,7 +107,6 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
     // se diagonal 1 conter tres O
     if (conta_diagonal_o == 3) {
-        // cout << "X venceu!" << endl;
         return 2;
     }
 
@@ -146,7 +145,6 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
     // se diagonal 2 conter tres x
     if (conta_diagonal_x == 3) {
-        // cout << "X venceu!" << endl;
         return 1;
     }
 
@@ -155,13 +153,22 @@ int Verifica_Velha(int Velha[][3], int linhas) {
 
     // se diagonal 2 conter tres O
     if (conta_diagonal_o == 3) {
-        // cout << "X venceu!" << endl;
         return 2;
     }
 
     // apos verificar diagonal 2, zera contador de O
     conta_diagonal_o = 0;
 
+    // indica se jogo esta possivelmente empatado
+    // bool empatou = false;
 
+    if (x_venceu == true && o_venceu == true) {
+        // empatou = true;
+        return 0;
+    } else if (x_venceu == true && o_venceu == false) {
+        return 1;
+    } else if (x_venceu == false && o_venceu == true) {
+        return 2;
+    }
     return -1;
 }
